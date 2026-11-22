@@ -2,6 +2,11 @@
   --primary-color: #4b2e83;
   --secondary-color: #d8b4fe;
   --text-color: #263238;
+  --white-color: #ffffff;
+  --page-color: #f4f4f4;
+  --border-color: #777777;
+  --light-purple: #f3e8ff;
+  --dark-purple: #321f59;
   --heading-font: Georgia, serif;
   --body-font: Arial, sans-serif;
 }
@@ -13,7 +18,7 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: var(--page-color);
   color: var(--text-color);
   font-family: var(--body-font);
   line-height: 1.5;
@@ -26,7 +31,6 @@ footer {
   margin: 0 auto;
 }
 
-/* Header and navigation */
 header {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -62,11 +66,10 @@ header nav a {
 header nav a:hover,
 header nav a:focus,
 header nav a[aria-current="page"] {
-  color: #ffffff;
+  color: var(--white-color);
   background-color: var(--primary-color);
 }
 
-/* Main page styles */
 main {
   padding: 16px 0;
 }
@@ -86,7 +89,7 @@ h1 {
   width: 100%;
   padding: 14px;
   color: var(--text-color);
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--white-color);
   font-size: 2rem;
 }
 
@@ -102,17 +105,17 @@ h3 {
 section {
   margin: 24px 0;
   padding: 16px;
-  background-color: #ffffff;
-  border: 1px solid #bdbdbd;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
 }
 
-/* About page hero section */
+/* About page hero section. */
 .hero {
   position: relative;
   min-height: 360px;
   padding: 0;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--white-color);
 }
 
 .hero-image {
@@ -132,8 +135,8 @@ section {
   align-items: center;
   gap: 16px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.92);
-  border: 1px solid #777777;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
 }
 
 .hero .intro img {
@@ -143,7 +146,7 @@ section {
   object-fit: cover;
 }
 
-/* About page history section */
+/* About page history section. */
 .history-content {
   display: grid;
   grid-template-columns: 1fr 180px 1fr;
@@ -158,7 +161,7 @@ section {
   object-fit: cover;
 }
 
-/* About page adventure gallery */
+/* About page adventure gallery. */
 .adventures-gallery {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -184,7 +187,7 @@ section {
   font-weight: bold;
 }
 
-/* Contact page introduction */
+/* Contact page. */
 .contact-intro {
   text-align: center;
 }
@@ -198,7 +201,6 @@ section {
   background-color: transparent;
 }
 
-/* Contact information and map */
 .contact-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -227,10 +229,9 @@ section {
   display: block;
   width: 100%;
   min-height: 250px;
-  border: 1px solid #777777;
+  border: 1px solid var(--border-color);
 }
 
-/* Employee profiles */
 .employee-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -251,10 +252,10 @@ section {
 
 .employee-gallery figcaption {
   padding: 10px;
-  background-color: #f3e8ff;
+  background-color: var(--light-purple);
 }
 
-/* Contact form */
+/* Contact form. */
 .contact-form {
   display: grid;
   gap: 10px;
@@ -271,8 +272,10 @@ section {
 .contact-form textarea {
   width: 100%;
   padding: 10px;
+  color: var(--text-color);
+  background-color: var(--white-color);
   font: inherit;
-  border: 1px solid #777777;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
 }
 
@@ -285,7 +288,7 @@ section {
   gap: 8px;
   margin: 12px 0;
   padding: 16px;
-  border: 1px solid #777777;
+  border: 1px solid var(--border-color);
 }
 
 .contact-form legend {
@@ -311,7 +314,7 @@ section {
 .contact-form button {
   width: fit-content;
   padding: 12px 24px;
-  color: #ffffff;
+  color: var(--white-color);
   background-color: var(--primary-color);
   border: none;
   border-radius: 4px;
@@ -322,10 +325,10 @@ section {
 
 .contact-form button:hover,
 .contact-form button:focus {
-  background-color: #321f59;
+  background-color: var(--dark-purple);
 }
 
-/* Footer */
+/* Footer. */
 footer {
   display: flex;
   justify-content: space-between;
@@ -356,7 +359,6 @@ footer p {
   height: 32px;
 }
 
-/* Responsive layout */
 @media (max-width: 700px) {
   header {
     grid-template-columns: 1fr;
