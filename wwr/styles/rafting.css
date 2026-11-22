@@ -1,38 +1,38 @@
 :root {
-  --primary-color: #164e63;
-  --secondary-color: #38a3a5;
-  --accent1-color: #263238;
-  --accent2-color: #f4a261;
+  --primary-color: #4b2e83;
+  --secondary-color: #d8b4fe;
+  --text-color: #263238;
   --heading-font: Georgia, serif;
   --body-font: Arial, sans-serif;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
+  background-color: #f4f4f4;
+  color: var(--text-color);
   font-family: var(--body-font);
-  color: var(--accent1-color);
   line-height: 1.5;
 }
 
 header,
 main,
 footer {
-  max-width: 1000px;
+  width: min(100% - 32px, 1000px);
   margin: 0 auto;
 }
 
-/* Header: Grid places the logo beside the navigation. */
 header {
   display: grid;
   grid-template-columns: 160px 1fr;
   align-items: center;
   gap: 24px;
   padding: 16px;
+  background-color: var(--secondary-color);
 }
 
 .logo img {
@@ -41,7 +41,6 @@ header {
   height: auto;
 }
 
-/* Main navigation: Flex keeps links in a horizontal row. */
 header nav {
   display: flex;
   justify-content: flex-end;
@@ -52,95 +51,89 @@ header nav {
 
 header nav a {
   display: block;
-  padding: 10px 14px;
-  color: var(--primary-color);
+  padding: 8px 14px;
+  color: var(--text-color);
   text-decoration: none;
+  border: 1px solid transparent;
   border-radius: 4px;
 }
 
 header nav a:hover,
 header nav a:focus,
 header nav a[aria-current="page"] {
-  color: #fff;
+  color: #ffffff;
   background-color: var(--primary-color);
+}
+
+main {
+  padding: 16px 0;
 }
 
 h1,
 h2 {
-  font-family: var(--heading-font);
   color: var(--primary-color);
+  font-family: var(--heading-font);
+  text-align: center;
 }
 
-main {
-  padding: 16px;
+h1 {
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
 }
 
 section {
   margin: 24px 0;
   padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #bdbdbd;
 }
 
-section h2 {
-  margin-bottom: 12px;
-}
-
-/* Hero image and overlay content. */
+/* Introductory About Us section. */
 .hero {
-  position: relative;
+  background-color: #ffffff;
 }
 
-.hero > img {
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid #bdbdbd;
+}
+
+.intro img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 90px;
+  object-fit: cover;
 }
 
-.hero h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  padding: 16px;
-  text-align: center;
-  color: #fff;
-  background-color: rgba(22, 78, 99, 0.85);
-}
-
-.hero article {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  width: min(70%, 600px);
-  padding: 16px;
-  background-color: rgba(255, 255, 255, 0.94);
-  border-left: 6px solid var(--secondary-color);
-}
-
-.hero article img {
-  float: right;
-  width: 125px;
-  height: auto;
-  margin: 0 0 8px 12px;
-}
-
-/* History: text and photo side by side. */
+/* History text, image, and text appear in three columns. */
 .history-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 180px 1fr;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .history-content img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 120px;
+  object-fit: cover;
 }
 
-/* Adventures: five figures across the section. */
+/* Five adventure images appear in one row on wide screens. */
 .adventures-gallery {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
+  gap: 12px;
 }
 
 .adventures-gallery figure {
@@ -152,23 +145,23 @@ section h2 {
 .adventures-gallery img {
   display: block;
   width: 100%;
-  height: 150px;
+  height: 100px;
   object-fit: cover;
 }
 
 .adventures-gallery figcaption {
-  padding: 8px 4px;
+  padding-top: 8px;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
-/* Footer: copyright on the left, social icons on the right. */
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 16px;
-  background-color: var(--accent2-color);
+  background-color: var(--secondary-color);
 }
 
 footer p {
@@ -184,7 +177,6 @@ footer p {
 
 .socialmedia a {
   display: block;
-  text-decoration: none;
 }
 
 .socialmedia img {
@@ -193,7 +185,7 @@ footer p {
   height: 32px;
 }
 
-/* Responsive layout for smaller screens. */
+/* Responsive layout for tablets and phones. */
 @media (max-width: 700px) {
   header {
     grid-template-columns: 1fr;
@@ -204,8 +196,15 @@ footer p {
     justify-content: center;
   }
 
+  .intro,
   .history-content {
     grid-template-columns: 1fr;
+  }
+
+  .intro img,
+  .history-content img {
+    width: 100%;
+    height: 150px;
   }
 
   .adventures-gallery {
