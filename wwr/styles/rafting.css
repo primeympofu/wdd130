@@ -128,7 +128,7 @@ section {
   background-color: rgb(255 255 255 / 90%);
 }
 
-.hero .intro {
+.hero article {
   position: absolute;
   right: 16px;
   bottom: 24px;
@@ -139,7 +139,7 @@ section {
   border: 1px solid var(--border-color);
 }
 
-.hero .intro img {
+.hero article img {
   float: right;
   width: 100px;
   height: 80px;
@@ -382,14 +382,14 @@ footer p {
     height: 120px;
   }
 
-  .hero .intro {
+  .hero article {
     right: 12px;
     bottom: 16px;
     left: 12px;
     font-size: 0.9rem;
   }
 
-  .hero .intro img {
+  .hero article img {
     width: 80px;
     height: 70px;
     margin-left: 12px;
