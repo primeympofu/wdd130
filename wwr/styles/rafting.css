@@ -64,7 +64,7 @@ header nav a {
 }
 
 header nav a:hover,
-header nav a:focus,
+header nav a:focus-visible,
 header nav a[aria-current="page"] {
   color: var(--white-color);
   background-color: var(--primary-color);
@@ -82,14 +82,6 @@ h2 {
 }
 
 h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 14px;
-  color: var(--text-color);
-  background-color: var(--white-color);
   font-size: 2rem;
 }
 
@@ -109,7 +101,7 @@ section {
   border: 1px solid var(--border-color);
 }
 
-/* About page hero section. */
+/* About page hero. */
 .hero {
   position: relative;
   min-height: 360px;
@@ -123,6 +115,17 @@ section {
   width: 100%;
   height: 360px;
   object-fit: cover;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 12px;
+  color: var(--text-color);
+  background-color: rgb(255 255 255 / 90%);
 }
 
 .hero .intro {
@@ -146,7 +149,7 @@ section {
   object-fit: cover;
 }
 
-/* About page history section. */
+/* About page history. */
 .history-content {
   display: grid;
   grid-template-columns: 1fr 180px 1fr;
@@ -193,12 +196,7 @@ section {
 }
 
 .contact-intro h1 {
-  position: static;
-  width: auto;
-  padding: 0;
   margin-bottom: 16px;
-  color: var(--primary-color);
-  background-color: transparent;
 }
 
 .contact-details {
@@ -234,7 +232,7 @@ section {
 
 .employee-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -255,7 +253,6 @@ section {
   background-color: var(--light-purple);
 }
 
-/* Contact form. */
 .contact-form {
   display: grid;
   gap: 10px;
@@ -324,11 +321,11 @@ section {
 }
 
 .contact-form button:hover,
-.contact-form button:focus {
+.contact-form button:focus-visible {
   background-color: var(--dark-purple);
 }
 
-/* Footer. */
+/* Shared footer. */
 footer {
   display: flex;
   justify-content: space-between;
